@@ -1,0 +1,20 @@
+_databse schema_ the description of a database 
+    specified during database design 
+    no expected to change often 
+_schema diagram_ a display schema 
+    the diagram displays the structure of each record type but not the actual instance of records
+_schema construct_ each object in the schema 
+_database state or snapshot_ the data in database at a particular moment in time 
+    the current set of _occurrences_ or _instances_ in the database
+    in a given database state, each schema construct has its own current set of instance
+_define_ a new database , we specify its database schema only to the DBMS
+empty state = no data
+intial state of the database when the database is first _populated_ or _loaded_ with the intital data
+the DBMS is partly responsible for ensuring that every state of the database is a _valid state_ 
+_valid state_ a state that satisfies the structure and constraints specifed in the schema 
+the DBMS stores the descriptions of hte schema constructs and constraints also called the meta-data in the DBMS catalog so that DBMS software can refer to the schema whenever it needs to
+the schema is also called _intension_ 
+a database state is called _extention_ of the schema 
+_schema evoluation_ when the schema changes when the database is operational
+
+2.2 three-schema architecture and data independence 
