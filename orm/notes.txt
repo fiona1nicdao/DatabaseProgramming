@@ -1,0 +1,21 @@
+# python debugging 
+import pdb
+pdb.set_trace()
+
+# Query 1: names of all users
+print("## Full Name of all users ##")
+users = session.query(User)
+for user in users:
+    print("full name" + user.fullname+"\n")
+
+# Query 2: all addresses of a single user (Lily)
+print("## Addresses of a user ##")
+#Join Query
+stmt = (
+    select(Address)
+    .join(Address.user)
+    .where(User.name == "wanda")
+)
+for record in session.scalars(stmt) :
+    print(record)
+    

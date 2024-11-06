@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
-#DB Connection: create_engine(DBMS_name+driver://<username>:<password>@<hostname>/<database_name>)
+# DB Connection: create_engine(DBMS_name+driver://fnicdao:Nov05electionDay@fnicdao/UndertheSea)
 engine = create_engine("postgresql+psycopg2://postgres:csclass24@localhost/postgres")
 
 #Define Classes/Tables
@@ -61,7 +61,17 @@ with Session(engine) as session:
         ],
     )
     patrick = User(name="patrick", fullname="Patrick Star")
-    session.add_all([spongebob, sandy, patrick])
+    wanda = User(
+        name="wanda",
+        fullname="Wanda Max",
+        addresses=[Address(email_address="wanda@sqlalchemy.org")],
+    )
+    vision = User(
+        name="Vision",
+        fullname="Vision Max",
+        addresses=[Address(email_address="vision@gmail.com")],
+    )
+    session.add_all([spongebob, sandy, patrick, wanda, vision])
     session.commit()
 
 # Simple Queries
@@ -117,3 +127,21 @@ print("\n## Address Table Contents - After Delete##")
 addresses = session.query(Address)  
 for address in addresses:  
     print("Email Address: " + address.email_address)
+
+# Query 1: names of all users
+print("## Full Name of all users ##")
+users = session.query(User)
+for user in users:
+    print("full name" + user.fullname+"\n")
+
+# Query 2: all addresses of a single user (Lily)
+print("## Addresses of a user ##")
+#Join Query
+stmt = (
+    select(Address)
+    .join(Address.user)
+    .where(User.name == "wanda")
+)
+for record in session.scalars(stmt) :
+    print(record)
+    
