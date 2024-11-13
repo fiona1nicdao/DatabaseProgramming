@@ -22,7 +22,9 @@ posts = db.posts
 post = {"author": "Mike",
         "text": "My first blog post!",
         "tags": ["mongodb", "python", "pymongo"],
-        "date": datetime.datetime.now(datetime.UTC)}
+        # "date": datetime.datetime.now(datetime.UTC)
+         "date": datetime.datetime.now()
+        }
 
 #Insert the post document into the database
 post_id = posts.insert_one(post).inserted_id
