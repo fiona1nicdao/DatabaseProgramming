@@ -1,5 +1,6 @@
 #NOTE: Remove tables in Atlas before running this script!
 
+
 import pymongo
 import datetime, pprint
 from pymongo import MongoClient
