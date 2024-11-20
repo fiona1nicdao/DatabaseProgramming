@@ -1,6 +1,7 @@
 # Join Query 
-# This join query looks at the chats that ARE active and see what their 
-# conversation (messages) are between the user_accounts.
+# This join query looks at a specific chat that IS active and 
+# is using the chat id for a specific chat.  It will print out 
+# the conversation (messages) are between the user_accounts.
 
 print("\n## Join Query -  Fiona  ##")
 stmt = (
