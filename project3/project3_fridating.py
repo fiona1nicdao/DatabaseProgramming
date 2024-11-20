@@ -460,7 +460,7 @@ with Session(engine) as session:
         actstate = "IL",
         #actlocgps_x = 41.73340246308718,
         #actlocgps_y = -88.22654074602464,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("4fc51a78-8d6c-4c64-9c68-a005558a0444")
     )
     account2 = Account(
         actid = uuid.UUID("56d321bd-b33e-4b8a-b8b7-941d3fea8dc7"),
@@ -472,7 +472,7 @@ with Session(engine) as session:
         actstate = "NE",
         #actlocgps_x = 41.13538421572084,
         #actlocgps_y = -100.76768205411464,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("586c6e9f-2d83-4a09-be8f-03e352eaf0ef")
     )
     account3 = Account(
         actid = uuid.UUID("6ed8a920-0c4c-4ba9-be1d-0fc3fa215338"),
@@ -484,7 +484,7 @@ with Session(engine) as session:
         actstate = "MO",
         #actlocgps_x = 39.10595603996265,
         #actlocgps_y = -94.58570393663828,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("0e607745-f99a-4cbc-aa5c-bc7f2e0c6af3")
     )
     account4 = Account(
         actid = uuid.UUID("16bf9d27-ddcc-4b51-8909-7e381ddb2543"),
@@ -496,7 +496,7 @@ with Session(engine) as session:
         actstate = "IL",
         #actlocgps_x = 41.653121331513844,
         #actlocgps_y = -87.94838069975592,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("f769d227-5e38-4313-80f5-532b81c32185")
     )
     account5 = Account(
         actid = uuid.UUID("4842d59b-dfdb-4b71-92b7-3647a1967157"),
@@ -508,7 +508,7 @@ with Session(engine) as session:
         actstate = "IL",
         #actlocgps_x = 41.89728457057297,
         #actlocgps_y = -87.641059003511052,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("ee84defc-0fef-45de-8418-c1cc02a1f90f")
     )
     account6 = Account(
         actid = uuid.UUID("9e0d1b78-1782-4311-b4de-ace18e339ac4"),
@@ -520,7 +520,7 @@ with Session(engine) as session:
         actstate = "IL",
         #actlocgps_x = 41.89728457057297,
         #actlocgps_y = -87.641059003511052,
-        userid = uuid.UUID("3db2bb9a-2418-4258-bbc4-c7ea32b39570") # Need to change depending on drew's info
+        userid = uuid.UUID("55ff8590-2c7d-4270-8ac6-b8bba37f00a1")
     )
     if actuallyWriteDataToTheDatabase:
         session.add_all([account1, account2, account3, account4, account5, account6])
@@ -528,32 +528,32 @@ with Session(engine) as session:
 
     # Insert participates in
     participatesin1 = ParticipatesIn(
-        actid = uuid.UUID("16bf9d27-ddcc-4b51-8909-7e381ddb2543"), # susan & mark
+        actid = uuid.UUID("16bf9d27-ddcc-4b51-8909-7e381ddb2543"),
         chatid = uuid.UUID("1f697b04-3fed-47b9-87b6-02f68d04ac21"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=42)
     )
     participatesin2 = ParticipatesIn(
-        actid = uuid.UUID("4842d59b-dfdb-4b71-92b7-3647a1967157"), # susan & mark
+        actid = uuid.UUID("4842d59b-dfdb-4b71-92b7-3647a1967157"),
         chatid = uuid.UUID("1f697b04-3fed-47b9-87b6-02f68d04ac21"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=42)
     )
     participatesin3 = ParticipatesIn(
-        actid = uuid.UUID("9e0d1b78-1782-4311-b4de-ace18e339ac4"), # jens & stephanie
+        actid = uuid.UUID("9e0d1b78-1782-4311-b4de-ace18e339ac4"),
         chatid = uuid.UUID("6312dd54-47b0-4d8d-b21c-5cdda64739e6"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=7)
     )
     participatesin4 = ParticipatesIn(
-        actid = uuid.UUID("6a6a9838-0ead-4988-b9cc-b2cc77cfcd34"), # jens & stephanie
+        actid = uuid.UUID("6a6a9838-0ead-4988-b9cc-b2cc77cfcd34"),
         chatid = uuid.UUID("6312dd54-47b0-4d8d-b21c-5cdda64739e6"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=7)
     )
     participatesin5 = ParticipatesIn(
-        actid = uuid.UUID("9e0d1b78-1782-4311-b4de-ace18e339ac4"), # jens & joseph
+        actid = uuid.UUID("9e0d1b78-1782-4311-b4de-ace18e339ac4"),
         chatid = uuid.UUID("aceec0e9-bf69-4e19-8c4b-5b9a7d3957cd"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=7)
     )
     participatesin6 = ParticipatesIn(
-        actid = uuid.UUID("56d321bd-b33e-4b8a-b8b7-941d3fea8dc7"), # jens & joseph
+        actid = uuid.UUID("56d321bd-b33e-4b8a-b8b7-941d3fea8dc7"),
         chatid = uuid.UUID("aceec0e9-bf69-4e19-8c4b-5b9a7d3957cd"),
         startdate = datetime.datetime.now() - datetime.timedelta(days=7)
     )
@@ -592,7 +592,7 @@ with Session(engine) as session:
     if actuallyWriteDataToTheDatabase:
         session.add_all([chat1, chat2, chat3])
         session.commit()
-
+        
 # Query and output by Josh
 # This query shows which credit cards are being used to cover which non-free-tier subscriptions. 
 statement = (
