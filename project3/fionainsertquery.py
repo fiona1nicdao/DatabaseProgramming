@@ -47,7 +47,7 @@ with Session(engine) as session :
         session.add_all([chat_1, chat_2, chat_3])
         session.commit()
 
-# Join Query -Fiona 
+# Join Query 
 # This join query looks at the chats that ARE active and see what their 
 # conversation (messages) are between the user_accounts.
 
@@ -56,12 +56,12 @@ stmt = (
     select(Message)
     .join(Message.chat)
     .where(Chat.chtisactive == True)
+    .where(Chat.chatid == "294441f3-87d3-4989-96bd-9dfb7c9d5325")
     .order_by(Message.chatid)
     .order_by(Message.mesid)
 )
 
 for record in session.scalars(stmt) :
-    # print(f"message id={record.id}")
-    print(f"""[Fiona] message id={record.mesid} chatid={record.chatid} 
-            message date={record.mesdate} 
-            message Text={record.mestext}""")    
+    print(f"""message id={record.mesid} chat_id={record.chatid} 
+          \n  message date={record.mesdate} 
+          \n  message Text={record.mestext} \n\n""")
