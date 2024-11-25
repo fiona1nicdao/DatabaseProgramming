@@ -1,6 +1,12 @@
 #NOTE: Remove tables in Atlas before running this script!
 
 
+import certifi
+ca = certifi.where()
+
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+
 import pymongo
 import datetime, pprint
 from pymongo import MongoClient
@@ -8,10 +14,7 @@ from pymongo import MongoClient
 #Create connection (get connection string in Atlas) 
 # client = MongoClient("mongodb+srv://lucuser:csclassluc@luccluster.utk6w.mongodb.net/?retryWrites=true&w=majority&appName=LUCcluster")
 
-# client = MongoClient("mongodb+srv://lucuser:csclassluc@luccluster.utk6w.mongodb.net/?retryWrites=true&w=majority&appName=LUCcluster")
-client = MongoClient(
-    "mongodb+srv://lucuser:csclassluc@luccluster.k4by9.mongodb.net/?retryWrites=true&w=majority&appName=LUCcluster"
-)
+client = MongoClient("mongodb+srv://lucuser:csclassluc@luccluster.k4by9.mongodb.net/?retryWrites=true&w=majority&appName=LUCcluster", server_api=ServerApi('1'))
 
 #Getting a database called test_database
 db = client.test_database
@@ -23,9 +26,7 @@ posts = db.posts
 post = {"author": "Mike",
         "text": "My first blog post!",
         "tags": ["mongodb", "python", "pymongo"],
-        # "date": datetime.datetime.now(datetime.UTC)
-         "date": datetime.datetime.now()
-        }
+        "date": datetime.datetime.now()}
 
 #Insert the post document into the database
 post_id = posts.insert_one(post).inserted_id
